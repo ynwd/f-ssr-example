@@ -11,6 +11,12 @@ const s = new Server();
 // Simulate async method
 const getUser = (data?: string) => Promise.resolve(data);
 
+// The endpoint for the root URL
+s.get(
+  "/",
+  () => "To try the URL pattern, please open: http://localhost:8000/users/123",
+);
+
 // Create an SSR page endpoint
 s.page(
   // URL end point with regex
