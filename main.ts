@@ -2,7 +2,7 @@ import Server, {
   Context,
   HttpRequest,
   RenderOptions,
-} from "https://deno.land/x/fastro@v0.77.6/mod.ts";
+} from "https://deno.land/x/fastro@v0.77.7/mod.ts";
 import app from "./pages/app.tsx";
 
 // Create a server instance
@@ -47,9 +47,6 @@ s.page(
     return ctx.render(options);
   },
 );
-
-// Specify a static path for the auto-generated JS file
-s.static("/static", { folder: "static", maxAge: 90 });
 
 // Serves HTTP requests
 await s.serve();
