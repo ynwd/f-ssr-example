@@ -13,6 +13,7 @@ const getUser = (data?: string) => Promise.resolve(data);
 
 // Redirect to http://localhost:8000/users/123
 s.get("/", () => {
+  // See: https://developer.mozilla.org/en-US/docs/Web/API/Response/redirect_static
   return Response.redirect("http://localhost:8000/users/123", 307);
 });
 
@@ -37,6 +38,8 @@ s.page(
       status: 200,
       // Put your SEO setting here
       // You can change the value dynamically
+      // You can add the meta data also
+      // See: https://deno.land/x/fastro/mod.ts?s=RenderOptions
       html: { head: { title: `Hello, User #${user}` } },
     };
 
